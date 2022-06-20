@@ -1,0 +1,19 @@
+#GENERAL
+spring:
+  application.name: configmap
+
+  cloud:
+    #KUBERNETES
+    kubernetes:
+      client:
+        namespace: default
+      config:
+        sources:
+          - name: infrastructure-rabbitmq
+          - name: infrastructure-postgresql
+          - name: infrastructure-mongodb
+          - name: infrastructure-jpa-hibernate
+          - name: infrastructure-redis
+          - name: infrastructure-mail
+          - name: infrastructure-firebase
+          - name: ${spring.application.name}
